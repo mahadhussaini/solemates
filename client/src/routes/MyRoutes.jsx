@@ -24,8 +24,8 @@ import Notifications from "../pages/User/Profile/Notifications";
 import Password from "../pages/User/Profile/Password";
 import PaymentSuccessful from "../components/PaymentSuccessful";
 
-axios.defaults.baseURL = axios.defaults.baseURL =
-  import.meta.env.REACT_API_URL || "http://localhost:5000";
+axios.defaults.baseURL =
+  import.meta.env.VITE_REACT_API_URL || "http://localhost:5000";
 axios.defaults.withCredentials = true;
 
 const MyRoutes = () => {
