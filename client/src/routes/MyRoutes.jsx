@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
+import axios from "axios";
 import Home from "../pages/Home/Home";
 import About from "../pages/About";
 import Collections from "../pages/Collections";
@@ -23,6 +24,10 @@ import Notifications from "../pages/User/Profile/Notifications";
 import Password from "../pages/User/Profile/Password";
 import PaymentSuccessful from "../components/PaymentSuccessful";
 
+axios.defaults.baseURL = axios.defaults.baseURL =
+  process.env.REACT_APP_API_URL || "http://localhost:4000";
+axios.defaults.withCredentials = true;
+
 const MyRoutes = () => {
   const user = false;
   const { cartItems, userCartItems } = useSelector((state) => state.cart);
@@ -31,7 +36,7 @@ const MyRoutes = () => {
   return (
     <Layout>
       <Routes>
-        <Route path='*' element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/collections" element={<Collections />} />
@@ -41,9 +46,15 @@ const MyRoutes = () => {
         <Route path="/products/women" element={<Women />} />
         <Route path="/products/:id" element={<ProductPage />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={user ? <Navigate to="/" replace={true}  /> : <Login />} />
-        <Route path="/register" element={user ? <Navigate to="/" replace={true}  /> : <Register />} />
-        <Route path="/user-profile" element={ <UserProfile/>}>
+        <Route
+          path="/login"
+          element={user ? <Navigate to="/" replace={true} /> : <Login />}
+        />
+        <Route
+          path="/register"
+          element={user ? <Navigate to="/" replace={true} /> : <Register />}
+        />
+        <Route path="/user-profile" element={<UserProfile />}>
           <Route path="" element={<MyAccount />} />
           <Route path="orders" element={<MyOrders />} />
           <Route path="addresses" element={<MyAddress />} />
@@ -51,7 +62,16 @@ const MyRoutes = () => {
           <Route path="password" element={<Password />} />
           <Route path="settings" element={<Settings />} />
         </Route>
-        <Route path="/checkout" element={ (userInfo? userCartItems.length <1 : cartItems.length<1)  ? <Navigate to="/products" replace={true}  /> : <Checkout />} />
+        <Route
+          path="/checkout"
+          element={
+            (userInfo ? userCartItems.length < 1 : cartItems.length < 1) ? (
+              <Navigate to="/products" replace={true} />
+            ) : (
+              <Checkout />
+            )
+          }
+        />
         <Route path="/payment" element={<PaymentSuccessful />} />
       </Routes>
     </Layout>
