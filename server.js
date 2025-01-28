@@ -23,7 +23,7 @@ app.use("", require("./routes/stripe"));
 
 const allowedOrigin =
   process.env.NODE_ENV === "production"
-    ? "https://eventwave-client.onrender.com"
+    ? "https://soulemates.netlify.app"
     : "http://localhost:3000";
 
 app.use(
