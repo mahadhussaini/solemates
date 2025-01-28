@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const MyOrders = () => {
-  document.title = "My Orders";
+  document.title = "My Orders"
 
   const { orders } = useSelector((state) => state.order);
   const { userInfo } = useSelector((state) => state.auth);

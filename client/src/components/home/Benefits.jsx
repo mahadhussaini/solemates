@@ -33,7 +33,7 @@ const Benefits = () => {
             Affordable Goods
           </h3>
           <p className="text-grayish-blue text-base">
-            The SoleMates available are just within the reach of your pocket. No
+            The sneakers available are just within the reach of your pocket. No
             hidden cost. No addtional fee required other than what’s stated.
           </p>
         </div>
@@ -45,8 +45,8 @@ const Benefits = () => {
             Best Quality
           </h3>
           <p className="text-grayish-blue text-base">
-            From your favorite brand to the latest trends, we sell SoleMates
-            only of the finest and durable materials you’d ever find.
+            From your favorite brand to the latest trends, we sell sneakers only
+            of the finest and durable materials you’d ever find.
           </p>
         </div>
       </div>

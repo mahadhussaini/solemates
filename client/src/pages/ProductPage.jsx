@@ -19,7 +19,8 @@ const ProductPage = () => {
     if (!loading) {
       dispatch(getProductItem({ productId: params.id }));
     }
-  }, [dispatch, loading, params.id]);
+    // eslint-disable-next-line
+  }, [loading]);
 
   return (
     <section className="min-h-[70vh] lg:min-h-[80vh] product-container lg:flex lg:items-center lg:gap-x-12 xl:gap-x-24 lg:px-20 xl:px-40 lg:py-20 lg:m-auto lg:mt-2 lg:max-w-8xl">

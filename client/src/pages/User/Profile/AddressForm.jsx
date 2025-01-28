@@ -32,6 +32,7 @@ const AddressForm = () => {
       zipcode,
       streetAddress,
     } = data;
+    // IF CREATE ADDRESS
     if (addressIndex === null) {
       dispatch(
         createAddress({
@@ -47,6 +48,7 @@ const AddressForm = () => {
         })
       );
     } else {
+      // UPDATE MODE
       dispatch(
         updateAddress({
           firstname,
@@ -101,6 +103,7 @@ const AddressForm = () => {
             type="text"
             className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-orange"
             placeholder="First Name"
+            // IF ITS IN EDIT STATE, THE DEFAULT VALUES ARE THE VALUE OF THE ADDRESS INDEX, ELSE (IE IN CREATE STATE) ITS EMPTY
             defaultValue={
               addressIndex !== null ? addresses[addressIndex].firstname : ""
             }

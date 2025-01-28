@@ -15,7 +15,7 @@ const Settings = () => {
 
   useEffect(() => {
     dispatch(cancel);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, []);
 
   const cancel = () => {

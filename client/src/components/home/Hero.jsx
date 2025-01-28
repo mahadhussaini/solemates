@@ -4,7 +4,7 @@ import heroImg from "../../assets/hero-sneaker.png";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Hero = () => {
-  document.title = "SoleMates";
+  document.title = "Sneakers";
 
   return (
     <AnimatePresence>
@@ -16,12 +16,12 @@ const Hero = () => {
           className="container order-2 lg:order-1 text-center lg:text-left mx-auto pt-5 sm:pt-10 lg:pt-5 pb-20 lg:pb-5 lg:px-0 xl:mr-1 w-full lg:w-1/2 relative z-[1]"
         >
           <h1 className="capitalize text-very-dark-blue font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl sm:leading-none pb-1 sm:pb-5">
-            Discover your dream SoleMates
+            Discover your dream sneakers
           </h1>
           <p className="text-dark-grayish-blue lg:leading-6 py-6 lg:py-7">
-            With a wide range of quality and affordable SoleMates to choose
-            from, browse through our collections for that SoleMates you’ve
-            always wanted.
+            With a wide range of quality and affordable sneakers to choose from,
+            browse through our collections for that sneakers you’ve always
+            wanted.
           </p>
           <Link to="products">
             <button className="w-full h-14 max-w-lg lg:max-w-none bg-orange rounded-lg lg:rounded-xl mt-3 mb-2 text-white flex items-center justify-center lg:w-3/5 hover:bg-white shadow-[inset_0_0_0_0_rgba(255,125,26,0.6)] hover:shadow-[inset_0_-4rem_0_0_rgba(255,125,26,0.6)] transition-all duration-300 mx-auto lg:ml-0 lg:mr-auto">
@@ -34,7 +34,7 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           className="hero-img order-1 lg:order-2 w-full lg:w-1/2 lg:ml-4 relative"
         >
-          <img src={heroImg} alt="orange SoleMates" className="" />
+          <img src={heroImg} alt="orange sneakers" className="" />
           <div className="absolute w-full h-full bottom-16 sm:bottom-24 lg:bottom-24 -z-10 left-28 sm:left-44 lg:left-48">
             <div className=" h-inherit">
               <svg

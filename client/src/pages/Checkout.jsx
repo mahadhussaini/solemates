@@ -22,7 +22,8 @@ const Checkout = () => {
 
   useEffect(() => {
     dispatch(cartDisplay(false));
-  }, [dispatch]);
+    // eslint-disable-next-line
+  }, []);
 
   const {
     register,
@@ -352,8 +353,11 @@ const Checkout = () => {
                     )}
                   </div>
                   <div className="border-t border-gray-200">
+                    {/* CHECKING IF THE USER HAS A DEFAULT ADDRESS OR EVEN HAVE ANY ADDRESSES AT ALL */}
                     {addresses.length > 0 ? (
+                      // FIRST IF THE USER HAS ANY ADDRESSES
                       <>
+                        {/* CHECK IF THERE IS A DEFAULT ADDRESS */}
                         {addresses.filter((address) => address.checked).length >
                         0 ? (
                           <>
@@ -377,6 +381,7 @@ const Checkout = () => {
                               ))}
                           </>
                         ) : (
+                          // IF NO DEFAULT ADDRESS, SET THE DELIVERY INFO TO THE USER'S FIRST ADDRESS
                           <>
                             <div
                               key={addresses[0]._id}
@@ -396,6 +401,7 @@ const Checkout = () => {
                         )}
                       </>
                     ) : (
+                      // IF NO ADDRESS
                       <>
                         <Link to="/user-profile/addresses">
                           <p className="w-fit mt-8 mb-6 text-very-dark-blue border-b border-b-orange hover:border-b-transparent transition-all">
@@ -416,6 +422,7 @@ const Checkout = () => {
                 </div>
               )}
             </div>
+            {/* <!-- Order summary --> */}
             <div className="order-1 lg:order-2 flex-1 w-auto mt-16 sm:mt-10 lg:mt-4">
               <h3 className="text-lg font-bold text-very-dark-blue">
                 Order summary

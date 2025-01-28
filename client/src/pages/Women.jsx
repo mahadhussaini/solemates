@@ -11,7 +11,7 @@ import {
 } from "../redux/reducers/productSlice";
 
 const Women = () => {
-  document.title = "Women's SoleMates";
+  document.title = "Women's Sneakers"
 
   let location = useLocation();
   let gender = location.pathname.split("/")[2];
@@ -32,7 +32,8 @@ const Women = () => {
         selectFilters({ filter: { ...filter, color: "", company: "" } })
       );
     }
-  }, [loading, gender, dispatch, filter]);
+    // eslint-disable-next-line
+  }, [loading, gender]);
 
   return (
     <section className="h-auto pt-2 min-h-[80vh]">

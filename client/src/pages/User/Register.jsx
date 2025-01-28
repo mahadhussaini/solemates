@@ -23,12 +23,15 @@ const Register = () => {
 
   const navigate = useNavigate();
   useEffect(() => {
+    // redirect user to login page if registration was successful
     if (success) {
       navigate("/login");
     }
+    // redirect authenticated user to profile screen
     if (userInfo) {
       navigate("/user-profile");
     }
+    // eslint-disable-next-line
   }, [navigate, userInfo, success]);
 
   const submitForm = (data) => {
@@ -44,7 +47,7 @@ const Register = () => {
       <div className="bg-pale-orange absolute inset-0 h-full -z-20">
         <img
           src={AuthBg}
-          alt="background of SoleMates on a wooden board"
+          alt="background of sneakers on a wooden board"
           className="absolute inset-0 h-full w-full object-cover opacity-30"
         />
       </div>

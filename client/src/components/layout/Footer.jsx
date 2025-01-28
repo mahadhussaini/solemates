@@ -58,10 +58,10 @@ const Footer = () => {
         </nav>
 
         <div className="copyright text-center md:text-left mb-8 md:mb-0">
-          © Copyright 2024
+          © Copyright 2025
           <br />
           <a
-            href="https://portfolio-sable-psi.vercel.app"
+            href="https://mahadhussaini.netlify.app"
             className="border-bottom rounded-sm shadow-[inset_0_-1px_0_0_#fff] hover:shadow-[inset_0_-4rem_0_0_#ff7d1a] hover:text-very-dark-blue py-1 transition-all duration-300"
             target="_blank"
             rel="noopener noreferrer"

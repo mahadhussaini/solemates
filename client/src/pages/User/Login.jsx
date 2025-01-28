@@ -15,9 +15,11 @@ const Login = () => {
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
+  // redirect authenticated user to profile screen
   useEffect(() => {
     if (userInfo) {
       navigate("/user-profile");
+      // eslint-disable-next-line
     }
   }, [navigate, userInfo]);
 
@@ -34,7 +36,7 @@ const Login = () => {
       <div className="bg-pale-orange absolute inset-0 h-full w-full -z-20">
         <img
           src={AuthBg}
-          alt="background of SoleMates on a wooden board"
+          alt="background of sneakers on a wooden board"
           className="absolute inset-0 h-full w-full object-cover opacity-30"
         />
       </div>

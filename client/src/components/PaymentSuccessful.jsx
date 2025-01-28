@@ -7,7 +7,9 @@ import { createOrder, getUserOrder } from "../redux/reducers/orderSlice";
 const PaymentSuccessful = () => {
   document.title = "Congratulations on your payment";
   const { userInfo, userToken } = useSelector((state) => state.auth);
-  const { cartItems, amountTotal } = useSelector((state) => state.cart);
+  const { userCartItems, cartItems, amountTotal } = useSelector(
+    (state) => state.cart
+  );
   const { success, loading, error } = useSelector((state) => state.order);
   const { addresses } = useSelector((state) => state.address);
 
@@ -30,16 +32,20 @@ const PaymentSuccessful = () => {
         })
       );
     }
-  }, [userInfo, addresses, dispatch, paymentID, cartItems, amountTotal]);
+    // eslint-disable-next-line
+  }, [userInfo, addresses]);
 
   useEffect(() => {
     if (userInfo && addresses.length > 0) {
+      // EMPTY CART AFTER CREATING  ORDER FOR USER
       success && dispatch(emptyCart());
     }
+    // IF IT'S A UNREGISTERED/NON-USER
     if (!userToken) {
       dispatch(emptyCart());
     }
-  }, [addresses.length, dispatch, success, userInfo, userToken]);
+    // eslint-disable-next-line
+  }, [success, userCartItems.length > 0, cartItems.length > 0]);
 
   return (
     <section className="h-auto pt-2 min-h-[80vh] flex justify-center text-center">

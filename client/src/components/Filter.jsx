@@ -20,7 +20,8 @@ const Filter = () => {
     if (!loading) {
       dispatch(getFilters());
     }
-  }, [dispatch, filteredProducts, loading]);
+    // eslint-disable-next-line
+  }, [filteredProducts]);
 
   const handleFilter = (e) => {
     dispatch(
@@ -31,6 +32,7 @@ const Filter = () => {
   const handleSort = (e) => {
     dispatch(selectSort({ sort: e.target.value }));
 
+    // REFILTER AFTER SORTED
     dispatch(selectFilters({ filter: { ...filter } }));
   };
 

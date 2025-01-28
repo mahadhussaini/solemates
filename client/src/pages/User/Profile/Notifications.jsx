@@ -1,7 +1,7 @@
 import React from "react";
 
 const Notifications = () => {
-  document.title = "My Notifications";
+  document.title = "My Notifications"
 
   return (
     <>

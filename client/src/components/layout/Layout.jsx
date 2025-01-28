@@ -10,7 +10,8 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     dispatch(getAllProducts());
-  }, [dispatch]);
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div>

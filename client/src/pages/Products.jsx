@@ -10,7 +10,7 @@ import {
 } from "../redux/reducers/productSlice";
 
 const Products = () => {
-  document.title = "All SoleMates";
+  document.title = "All Sneakers"
 
   const products = useSelector((state) => state.product.products);
   const loading = useSelector((state) => state.product.loading);
@@ -22,13 +22,16 @@ const Products = () => {
 
   useEffect(() => {
     if (!loading) {
+      // get filtered product choose return an empty array (bcos gender = men or women in products array)
+      // so that selectedFilers fxn can run successfully from store
       dispatch(getFilteredProducts({ gender: "all" }));
       // dispatch(getProducts({ products }));
       dispatch(
         selectFilters({ filter: { ...filter, color: "", company: "" } })
       );
     }
-  }, [dispatch, filter, loading]);
+    // eslint-disable-next-line
+  }, [!loading]);
 
   return (
     <section className="h-auto pt-2 min-h-[80vh]">
@@ -39,7 +42,7 @@ const Products = () => {
         <div className="absolute top-0 left-0 bg-dark-grayish-blue w-full h-48 rounded-md overflow-hidden">
           <img
             src={aboutHeader}
-            alt="rows of SoleMates"
+            alt="rows of sneakers"
             className="opacity-10 absolute h-full w-full object-cover"
           />
         </div>
